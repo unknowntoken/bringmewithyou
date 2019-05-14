@@ -1,0 +1,24 @@
+<div class="loginPanel">
+    <h2 class="welcomeText">Welcome to JavaBank</h2>
+    <hr>
+    <div class="login">
+        <form ng-submit="formSubmit()" class="form">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-id-badge"></i></span>
+                </div>
+                <input type="text" name="customer" class="form-control" placeholder="Customer ID" ng-model="username">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
+                </div>
+                <input type="password" name="password" class="form-control" placeholder="Password" ng-model="password">
+                <button type="submit" class="login btn btn-dark">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="forgotpassword">
+    Forgot password?
+</div>
