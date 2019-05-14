@@ -1,0 +1,64 @@
+
+### ENTITIES ###
+UserObject
+    firstName
+    lastName
+    userId
+    passWord
+
+StoryObject
+    storyId
+    storyDesc
+    storyImgUrl
+
+
+### BACKEND API ###
+POST
+    NewAccount
+        route: "/newaccount"
+        params: firstName,lastName,passWord
+        onSuccess:
+            HttpStatusCode: 201
+            HttpStatusMessage: "CREATED"
+            returns: userId
+        onFailure:
+            HttpStatusCode: 400
+            HttpStatusMessage: "BAD REQUEST"
+
+    AuthenticateUser
+        route: "/authenticate"
+        params: userName, passWord
+        onSuccess:
+            HttpStatusCode: 200
+            HttpStatusMessage: "OK"
+            returns: userId ? sessionID??? cookie? 
+        onFailure:
+            HttpStatusCode: 400
+            HttpStatusMessage: "BAD REQUEST"
+
+GET
+    Story
+        route: "/story/"
+        params: storyId
+        onSuccess:
+            HttpStatusCode: 200
+            HttpStatusMessage: "OK"
+            returns: storyObject
+        onFailure:
+            NOT FOUND
+                HttpStatusCode: 404
+                HttpStatusMessage: "NOT FOUND"
+            BAD REQUEST
+                HttpStatusCode: 400
+                HttpStatusMessage: "BAD REQUEST"
+
+    StoryList
+        route: "/story/list"
+        onSuccess:
+            HttpStatusCode: 200
+            HttpStatusMessage: "OK"
+            returns: 10 StoryObjects
+
+        onFailure:
+            HttpStatusCode: 400
+            HttpStatusMessage: "BAD REQUEST"
