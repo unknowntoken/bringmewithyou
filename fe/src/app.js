@@ -14,12 +14,12 @@
       $stateProvider
         .state('login', {
           url : '/login',
-          templateUrl : 'login.html',
+          templateUrl : 'login/login.html',
           controller : 'LoginController'
         })
         .state('home', {
           url : '/home',
-          templateUrl : 'home.html',
+          templateUrl : 'home/home.html',
           controller : 'HomeController'
         });
         

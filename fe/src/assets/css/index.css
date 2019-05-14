@@ -1,46 +1,54 @@
-body
-  background: darkslategray
+body {
+	background: darkslategray;
+}
 
-.welcomeText
-  text-align: center
-  margin-top: 10%
+.welcomeText {
+	text-align: center;
+	margin-top: 10%;
+}
 
-.loginPanel
-  background: white
-  border-top-left-radius: 3%
-  border-top-right-radius: 3%
-  color: black
-  text-align: center
-  margin-top: 5%
-  margin-left: 35%
-  margin-right: 35%
-  padding-left: 5%
-  padding-right: 5%
-  padding-top: 1%
-  padding-bottom: 3%
-  box-shadow: 0 5px 5px black
+.loginPanel {
+	background: white;
+	border-top-left-radius: 3%;
+	border-top-right-radius: 3%;
+	color: black;
+	text-align: center;
+	margin-top: 5%;
+	margin-left: 35%;
+	margin-right: 35%;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-top: 1%;
+	padding-bottom: 3%;
+	box-shadow: 0 5px 5px black;
+}
 
-.login
-  padding-bottom: 0
+.login {
+	padding-bottom: 0;
+}
 
-.fas
-  width: 25px
+.fas {
+	width: 25px;
+}
 
-.login
-  width: 100%
+.login {
+	width: 100%;
+}
 
-.btn
-  background: darkslategray
+.btn {
+	background: darkslategray;
+}
 
-.forgotpassword
-  background: lightgray
-  text-align: center
-  color: gray
-  font-weight: bold
-  margin-left: 35%
-  margin-right: 35%
-  padding: 1%
-  padding-left: 5%
-  padding-right: 5%
-  padding-bottom: 5%
-  box-shadow: 0 5px 5px black
+.forgotpassword {
+	background: lightgray;
+	text-align: center;
+	color: gray;
+	font-weight: bold;
+	margin-left: 35%;
+	margin-right: 35%;
+	padding: 1%;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-bottom: 5%;
+	box-shadow: 0 5px 5px black;
+}
