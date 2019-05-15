@@ -10,6 +10,7 @@ var app = angular.module('myApp');
         $scope.password = '';
         $state.transitionTo('home');
       } else {
+        alert("Incorrect username or password!")
         $scope.error = "Incorrect username/password !";
       }   
     };    
