@@ -5,5 +5,4 @@ import org.springframework.data.repository.NoRepositoryBean;
 
 @NoRepositoryBean
 public interface Dao<T> extends CrudRepository<T, Integer> {
-
 }
