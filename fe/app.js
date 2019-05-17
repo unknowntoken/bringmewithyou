@@ -76,6 +76,16 @@ app.controller('loginController', function ($rootScope, $scope, $location) {
 
 });
 
+app.controller('registerController', function ($scope, $location, $http) {
+
+  $scope.submit = function () {
+
+    
+
+  }
+
+});
+
 app.controller('cookieController', function setCookie(val) {
 
   cookie();
