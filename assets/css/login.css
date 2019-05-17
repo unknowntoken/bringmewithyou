@@ -7,29 +7,20 @@ input.userInput{
     height: 100%;
 }
 
-.welcomeText {
-	text-align: center;
-	margin-top: 10%;
-}
-
-.loginPanel {
+.mainPanel {
 	background: white;
 	border-top-left-radius: 3%;
 	border-top-right-radius: 3%;
 	color: black;
 	text-align: center;
-	margin-top: 5%;
+	margin-top: 10%;
 	margin-left: 35%;
 	margin-right: 35%;
 	padding-left: 5%;
 	padding-right: 5%;
-	padding-top: 1%;
+	padding-top: 2%;
 	padding-bottom: 3%;
 	box-shadow: 0 5px 5px black;
-}
-
-.login {
-	padding-bottom: 0;
 }
 
 .fas {

@@ -1,0 +1,19 @@
+<link rel="stylesheet" type="text/css" href="assets/css/register.css">
+
+<div class="mainPanel" ng-controller="registerController">
+    <h2 class="welcomeText">Welcome to Bring!</h2>
+    <h5 class="welcomeText">Please insert all your info.</h5>
+    <hr>
+    <div class="panel">
+        <form class="form" action="/newaccount" method="POST">
+            <input class="userInput" type="text" class="form-control" placeholder="First Name" ng-model="firstname">
+            <input class="userInput" type="text" class="form-control" placeholder="Last Name" ng-model="lastname">
+            <input class="userInput" type="text" class="form-control" placeholder="Username" ng-model="username">
+            <input class="userInput" type="password" class="form-control" placeholder="Password" ng-model="password">
+            <button type="button" ng-click="submit()" class="login btn btn-dark">Register</button>
+        </form>
+    </div>
+</div>
+<div class="forgotpassword">
+    
+</div>
