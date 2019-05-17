@@ -14,6 +14,9 @@ public class RegisterService {
     private Dao mySqlDao;
 
     public void newAccount(UserObject userObject) {
+        if(userObject.getFirstName().equals("") || userObject.getLastName().equals("") || userObject.getUsername().equals("") || userObject.getPassword().equals("")){
+            return;
+        }
         mySqlDao.save(userObject);
     }
 }
