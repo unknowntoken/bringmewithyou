@@ -1,0 +1,28 @@
+<link rel="stylesheet" type="text/css" href="assets/css/userlist.css">
+
+<div class="outer" ng-controller="userListController">
+    <div class="mainPanel">
+        <h2 class="welcomeText">Bring's top programmers</h2>
+        <div class="panel">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>First name</th>
+                        <th>Last name</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                    </tr>
+                </thead>
+                <tr ng-repeat="user in users">
+                    <td>{{user.firstname}}</td>
+                    <td>{{user.lastname}}</td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.password}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="buttons">
+        <button type="button" ng-click="go('/')" class="login btn btn-danger">Go back to main menu</button>
+    </div>
+</div>
