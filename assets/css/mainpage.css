@@ -1,16 +1,28 @@
-body {
-	background: darkslategray;
+img.bringHeaderImg{
+	position: absolute;
+	z-index: 1;
+	top: -100px;
+	border-bottom: 1px solid black;
+	width: 100%;
+}
+
+body{
+	background-color: rgba(100, 24, 36, 0);
 }
 
 .mainPanel {
 	background: white;
+	position: absolute;
+	left: 50%;
+	margin-left: -25%;
+	width: 50%;
+	z-index: 2;
+
 	border-top-left-radius: 3%;
 	border-top-right-radius: 3%;
 	color: black;
 	text-align: center;
-	margin-top: 10%;
-	margin-left: 35%;
-	margin-right: 35%;
+	margin-top: 15%;
 	padding-left: 5%;
 	padding-right: 5%;
 	padding-top: 2%;
@@ -27,7 +39,7 @@ body {
 }
 
 .btn {
-	background: darkslategray;
+	background: rgb(144, 24, 36);
 }
 
 .forgotpassword {

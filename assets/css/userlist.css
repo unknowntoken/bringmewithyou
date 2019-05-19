@@ -1,5 +1,37 @@
-body {
-	background: darkslategray;
+img.bringHeaderImg{
+	position: absolute;
+	z-index: 1;
+	top: -100px;
+	border-bottom: 1px solid black;
+}
+
+body{
+	background-color: rgba(100, 24, 36, 0);
+}
+
+.mainPanel {
+	position: absolute;
+	left: 50%;
+	margin-left: -25%;
+	background: white;
+	width: 50%;
+	z-index: 2;
+
+	border-top-left-radius: 3%;
+	border-top-right-radius: 3%;
+	color: black;
+	text-align: center;
+	margin-top: 15%;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-top: 2%;
+	padding-bottom: 3%;
+	box-shadow: 0 5px 5px black;
+}
+
+.table thead th{
+	vertical-align: middle;
+	text-align: center;
 }
 
 input.userInput{
@@ -11,21 +43,8 @@ input.userInput{
 	position: relative;
 }
 
-.mainPanel {
-	background: white;
-	border-top-left-radius: 3%;
-	border-top-right-radius: 3%;
-	color: black;
-	text-align: center;
-	margin-top: 10%;
-	margin-left: 30%;
-	margin-right: 30%;
-	box-shadow: 0 5px 5px black;
-}
-
 .buttons{
 	position: absolute;
-	margin-left: 30%;
 }
 
 .fas {
