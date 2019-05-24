@@ -1,0 +1,43 @@
+img.bringHeaderImg{
+	position: absolute;
+	z-index: 1;
+	top: -100px;
+	border-bottom: 1px solid black;
+	width: 100%;
+}
+
+body{
+	background-color: rgba(100, 24, 36, 0);
+}
+
+.panel{
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-top: 2%;
+	padding-bottom: 3%;
+}
+
+.mainPanel {
+	background: white;
+	position: relative;
+	left: 50%;
+	margin-left: -17.5%;
+	width: 35%;
+	z-index: 2;
+
+	border-top-left-radius: 3%;
+	border-top-right-radius: 3%;
+	
+	color: black;
+	text-align: center;
+	margin-top: 15%;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-top: 2%;
+	padding-bottom: 3%;
+	box-shadow: 0 5px 5px black;
+}
+
+.btn {
+	background: rgb(120, 24, 36);
+}

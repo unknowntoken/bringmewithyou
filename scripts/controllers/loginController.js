@@ -1,51 +1,58 @@
-angular.module('myApp')
+app = angular.module('myApp')
 
-    .controller('loginController', ['$scope', '$http', '$location', function ($scope, $http, $location) {
+app.controller('loginController', function ($rootScope, $scope, $http, $location) {
 
-        $scope.goBack = function () {
+    var authenticate = function (credentials, callback) {
 
-            $location.path("/");
+        console.log(credentials.username);
 
-        };
+        var headers = credentials ? {
 
-        $scope.submit = function () {
+            authorization: "Basic "
+                + btoa(credentials.username + ":" + credentials.password)
 
-            var loggedUsername = $scope.username;
-            var loggedPassword = $scope.password;
+        } : {};
 
-            $http({
+        $http.get('user', {
 
-                method: 'GET',
+            headers: headers
+        })
 
-                url: 'http://localhost:3000/users',
+            .then(function (data) {
 
-                params: {
-                    username: loggedUsername,
+                if (data.username) {
+                    $rootScope.authenticated = true;
+                } else {
+                    $rootScope.authenticated = false;
                 }
+                callback && callback();
 
-            }).then(function (response, status, headers, config) {
+            }),function (error) {
 
-                username = response.data;
+                $rootScope.authenticated = false;
+                callback && callback();
 
-                console.log(username);
+            };
 
-                if(response.data.username === loggedUsername && response.data.password === loggedPassword){
+    }
 
-                    $rootScope.isLoggedIn = true;
-                    $location.path("/");
+    authenticate();
 
-                }
-            
-                // this function will be called when the request is success
+    $scope.credentials = {};
 
-            }, function error(response) {
+    $scope.login = function () {
+        authenticate($scope.credentials, function () {
+            if ($rootScope.authenticated) {
 
-                alert()
-                // this function will be called when the request returned error status
+                $location.path("/");
+                $scope.error = false;
 
-            });
+            } else {
 
+                
+                $scope.error = true;
 
-        };
-
-    }]);
+            }
+        });
+    };
+});

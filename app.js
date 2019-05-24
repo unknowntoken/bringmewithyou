@@ -32,13 +32,13 @@
 
       .when('/story/list', {
 
-        resolve: {
+        /*resolve: {
           "check": function ($rootScope, $location) {
             if (!$rootScope.isLoggedIn) {
               $location.path('/');
             }
           }
-        },
+        },*/
 
         templateUrl: 'views/story.list.html'
 
@@ -50,11 +50,7 @@
 
       })
 
-    //Enable cross domain calls
-
-    $httpProvider.defaults.useXDomain = true;
-
-    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+      $httpProvider.defaults.headers.common = { "Content-Type": "application/json" };
 
   });
 
