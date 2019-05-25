@@ -1,23 +1,21 @@
-<link rel="stylesheet" type="text/css" href="assets/css/login.css">
-<link rel="stylesheet" type="text/css" href="assets/css/pagestructure.css">
-
-<div class="mainPanel" ng-controller="loginController">
-    <h2 class="welcomeText">Welcome to Bring!</h2>
-    <hr>
-    <div class="panel">
-        <form class="form"  ng-submit="login()">
-            <input class="userInput" type="text" name="customer" class="form-control" placeholder="Username"
-                ng-model="username">
-            <input class="userInput" type="password" name="password" class="form-control" placeholder="Password"
-                ng-model="password">
-
-            <br>
-            <button type="submit" class="login btn btn-dark">Login</button>
-            <br><br>
-            <button type="button" ng-click="goBack()" class="login btn btn-dark">Cancel</button>
-        </form>
+<h2>Login</h2>
+<form name="form" ng-submit="vm.login()" role="form">
+    <div>
+        <label for="username">Username</label>
+        <input type="text" name="username"
+          id="username" ng-model="vm.username" required />
+        <span ng-show="form.username.$dirty
+          && form.username.$error.required">Username is required</span>
     </div>
-</div>
-<div class="forgotpassword">
-    Forgot password?
-</div>
+    <div>
+        <label for="password">Password</label>
+        <input type="password"
+          name="password" id="password" ng-model="vm.password" required />
+        <span ng-show="form.password.$dirty
+          && form.password.$error.required">Password is required</span>
+    </div>
+    <div class="form-actions">
+        <button type="submit"
+          ng-disabled="form.$invalid || vm.dataLoading">Login</button>
+    </div>
+</form>

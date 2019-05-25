@@ -1,58 +1,44 @@
-app = angular.module('myApp')
-
-app.controller('loginController', function ($rootScope, $scope, $http, $location) {
-
-    var authenticate = function (credentials, callback) {
-
-        console.log(credentials.username);
-
-        var headers = credentials ? {
-
-            authorization: "Basic "
-                + btoa(credentials.username + ":" + credentials.password)
-
-        } : {};
-
-        $http.get('user', {
-
-            headers: headers
-        })
-
-            .then(function (data) {
-
-                if (data.username) {
-                    $rootScope.authenticated = true;
-                } else {
-                    $rootScope.authenticated = false;
+(function () {
+    'use strict';
+    angular
+        .module('app')
+        .controller('LoginController', LoginController);
+ 
+    LoginController.$inject = ['$location', '$window', '$http'];
+    function LoginController($location, $window, $http) {
+        var vm = this;
+        vm.login = login;
+ 
+        (function initController() {
+            $window.localStorage.setItem('token', '');
+        })();
+ 
+        function login() {
+            $http({
+                url: 'http://localhost:8080/login',
+                method: "POST",
+                data: { 
+                    'username': vm.username,
+                    'password': vm.password
                 }
-                callback && callback();
-
-            }),function (error) {
-
-                $rootScope.authenticated = false;
-                callback && callback();
-
-            };
-
+            }).then(function (response) {
+                if (response.data) {
+                    var token
+                      = $window.btoa(vm.username + ':' + vm.password);
+                    var userData = {
+                        userName: vm.username,
+                        authData: token
+                    }
+                    $window.sessionStorage.setItem(
+                      'userData', JSON.stringify(userData)
+                    );
+                    $http.defaults.headers.common['Authorization']
+                      = 'Basic ' + token;
+                    $location.path('/');
+                } else {
+                    alert("Authentication failed.")
+                }
+            });
+        };
     }
-
-    authenticate();
-
-    $scope.credentials = {};
-
-    $scope.login = function () {
-        authenticate($scope.credentials, function () {
-            if ($rootScope.authenticated) {
-
-                $location.path("/");
-                $scope.error = false;
-
-            } else {
-
-                
-                $scope.error = true;
-
-            }
-        });
-    };
-});
+})();
