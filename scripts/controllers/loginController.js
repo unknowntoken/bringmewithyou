@@ -15,7 +15,7 @@
  
         function login() {
             $http({
-                url: 'http://127.0.0.1:8080/login',
+                url: 'https://bringbe.herokuapp.com/login',
                 method: "POST",
                 data: { 
                     'username': vm.username,
