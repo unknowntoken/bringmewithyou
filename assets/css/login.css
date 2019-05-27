@@ -1,0 +1,34 @@
+.forgotpassword {
+
+	background: white;
+	position: relative;
+	width: 35%;
+
+	left: 50%;
+	margin-left: -17.5%;
+	z-index: 2;
+
+	clear: both;
+	bottom: 0px;
+	
+	text-align: center;
+	color: gray;
+	font-weight: bold;
+
+	padding: 1%;
+	padding-left: 5%;
+	padding-right: 5%;
+
+	border-top: 1px dotted gray;
+	box-shadow: 0 5px 5px black;
+}
+
+input.userInput{
+    width: 100%;
+    height: 100%;
+}
+
+.login {
+	width: 100%;
+}
+

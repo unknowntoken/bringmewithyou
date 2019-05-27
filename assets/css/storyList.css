@@ -1,0 +1,54 @@
+.mainPanel{
+	
+	position: absolute;
+	display: inline-block;
+	width: 90%;
+	height: 100% auto;
+	margin-left: -45%;
+	clear: both;
+
+	border-top-left-radius: 0%;
+	border-top-right-radius: 0%;
+}
+
+.storyBlock{
+	display: block;
+	float: left;
+	width: 30%;
+	height: 300px;
+	text-align: center;
+	border: 5px double rgba(144, 24, 36, 1);
+	color: black;
+	font-weight: bold;
+	margin-left: 2%;
+	margin-right: 1%;
+	margin-bottom: 3%;
+}
+
+.topbar{
+	position: absolute;
+	float: left;
+	margin-top: 12%;
+	padding-left: 5%;
+	padding-right: 5%;
+	width: 100%;
+	z-index: 2;
+	
+}
+
+button.logout{
+	float: right;
+	background: green;
+	width: 10%;
+	height: 100%;
+	border: 1px solid black;
+	
+}
+
+input.searchstory{
+	float: left;
+	height: 40px;
+	width: 25%;
+	margin: 0px;
+	border: 1px solid black;
+}
